@@ -1,0 +1,50 @@
+
+@font-face {
+  font-family: 'MonsterFriendFont';
+      src: url('../fonts/MonsterFriendFore.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'sans';
+      src: url('../fonts/determinationsansweb-webfont.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'hachiro';
+      src: url('../fonts/HachicroRegular.ttf') format('truetype');
+  font-display: swap;
+}
+
+
+h1 {
+
+     
+ font-family: "press start 2p";
+border-style: inset;
+width: fit-content;
+padding: 8px;
+border-color: black;
+border-radius: 20px;
+background-color: red;
+
+}
+
+p{
+
+font-family: "sans";
+
+}
+
+
+h2 {
+font-family: "MonsterFriendFont";
+
+}
+
+
+li {
+
+     font-family: 'sans';
+}
