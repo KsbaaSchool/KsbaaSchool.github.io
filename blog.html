@@ -4,18 +4,32 @@
 <head>
 <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
-
+  <link rel="stylesheet" href="assets/css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <title>Blog - Khalids Portfolio</title>
 
 </head>
+
 <body>
-<header>       <h1>Blog</h1>    <nav> 
+
+
+  <video autoplay muted loop playsinline class="achtergrond-video">
+    <source src="assets/video/SansVideo.mp4" type="video/mp4">
+  </video>
+
+
+
+
+
+
+<header>       <h1>Blog</h1>    
+    
+    <nav> 
      <ul>
-        <li><a href="index.html">Whoami</a></li>
-        <li><a href="projecten.html">Projecten</a></li>
-        <li><a href="blog.html" aria-current="page">Blog</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html"> Whoami</a><div class="box"></div> </li>
+        <li><a href="projecten.html">Projecten</a> <div class="box"></div></li>
+        <li><a href="blog.html" aria-current="page">Blog</a><div class="box"></div> </li>
+        <li><a href="contact.html">Contact</a><div class="box"></div></li>
       </ul>
           </nav>    
 </header>
@@ -42,6 +56,39 @@
 </article>
 
 <article>
+<h2>Map structuur en eigen fonts</h2>
+<p>4 september 2026</p>
+<p>Ik had eerst alles los in 1 map staan en dat werd snel rommelig. dus heb ik een assets map gemaakt met daarin css, fonts, img en video. nu weet ik precies waar alles staat en kan ik er zo een nieuwe pagina bij zetten zonder dat ik hoef te zoeken.</p>
+<p>Daarna heb ik 3 fonts gedownload en ingeladen met font face. je verzint daar zelf een naam en zet het pad naar het bestand erbij, en die naam gebruik je verder gewoon in font family. de titels doe ik in press start 2p van google fonts want dat past bij de game stijl.</p>
+</article>
+
+<article>
+<h2>Video als achtergrond</h2>
+<p>4 september 2026</p>
+<p>Ik wilde geen saaie achtergrond dus heb ik een video achter de site gezet. eerst probeerde ik het met background image maar dat kan niet met een video. het moet met een video tag in de html en dan zet je hem met css op position fixed en z index min 1 zodat hij achter alles blijft.</p>
+<p>Autoplay werkte eerst niet. dat komt omdat browsers een video met geluid niet zomaar laten starten. met muted erbij ging het wel.</p>
+</article>
+
+<article>
+<h2>De knopjes en de animatie</h2>
+<p>4 september 2026</p>
+<p>Hier ben ik het langst mee bezig geweest. ik wilde dat er iets achter de link beweegt als je er met je muis overheen gaat. eerst deed ik de animatie op de link zelf maar dan beweegt de tekst mee en dat vond ik lelijk.</p>
+<p>Uiteindelijk heb ik een leeg blokje naast de link gezet en die pak ik met a hover + box. die + is de adjacent sibling selector, dat is het element dat er direct naast staat. de beweging zelf zit in een keyframes met scale erin. daarna moest ik nog met z index zorgen dat de tekst boven het blokje bleef staan.</p>
+</article>
+
+<article>
+<h2>Portret met een glow</h2>
+<p>4 september 2026</p>
+<p>Op de whoami pagina wilde ik een foto van mezelf. die heb ik nog niet dus staat er nu even tekst in. het is een div met een vaste breedte en hoogte, border radius op 50 procent zodat hij rond wordt, en display grid met place items center zodat de tekst precies in het midden staat. met box shadow heb ik er een rode gloed omheen gezet zodat hij opvalt tegen de video.</p>
+</article>
+
+<article>
+<h2>De rest van de paginas</h2>
+<p>4 september 2026</p>
+<p>Projecten en contact heb ik nu ook ingevuld. ze gebruiken precies dezelfde header en hetzelfde menu als de andere paginas zodat je nooit hoeft te zoeken waar je bent. op de pagina waar je staat zet ik aria current op de link, dat leest een screenreader dan ook voor.</p>
+</article>
+
+<article>
 <h2>Responsive maken</h2>
 <p>4 september 2026</p>
 <p>Het laatste wat ik heb gedaan is de site responsive maken. Dat doe je met media queries, dat is eigenlijk een soort if statement in css. Je zegt dan vanaf een bepaalde breedte moet de layout er anders uitzien. Ik heb het getest met f12 in de browser op 480, 768 en 1024 pixels. Bij mobiel staat alles onder elkaar en op een breder scherm naast elkaar.</p>
@@ -51,7 +98,6 @@
 
 <footer>
 
-    <a href="mailto:khalid.sbaa12@outlook.com">Email</a>
 </footer>
 
 </body>

@@ -20,6 +20,7 @@
 ul{
 
 list-style: none;
+text-decoration: none;
 
 }
 
@@ -101,7 +102,12 @@ margin: auto;
 
      position: relative;
 
-     
+}
+
+
+.linkjes li {
+
+margin: 10px 0;
 
 }
 
@@ -142,21 +148,6 @@ z-index: 0;
      50%{transform: scale(1.2);}
      50%{opacity: 40%;}
 }
-
-@keyframes superExpand {
-     
-     50%{transform: scale(1.2);}
-     50%{opacity: 40%;}
-}
-
-a:active + .box{
-
-animation: superExpand 1s;
-
-       
-
-}
-
 
 
 #potret{
