@@ -3,6 +3,11 @@
 Alles hier is html en css die ik zelf heb geschreven. geen framework en geen template.
 opgezocht op youtube en in de docs van mdn.
 
+In de opdracht staat dat je minimaal 2 gebruikersscenario's en minimaal 3 ontwerpkeuzes moet
+onderbouwen, met minimaal 1 bron. ik ga niet voor die minimale eis. ik heb 6 keuzes
+uitgewerkt met 4 bronnen erbij, want ik wil hier boven voldoende op staan en niet precies op
+de streep.
+
 ## Voor wie ik het maak
 
 **Scenario 1, de recruiter met weinig tijd**
@@ -35,40 +40,60 @@ Waarom: scenario 2. blog lezen op de telefoon zonder horizontaal scrollen.
 
 Bron: https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design
 
-## Keuze 3, game fonts voor de koppen en een rustig font voor de tekst
+## Keuze 3, mobile first met media queries
 
-De h1 is press start 2p en de h2 is MonsterFriend, allebei pixel fonts die passen bij de
-undertale achtergrond. maar in zo'n font een hele alinea lezen is niet fijn, dus alle p
-tekst staat in het sans font. de eigen fonts laad ik in met font-face zodat ze op elke
-computer hetzelfde zijn.
+De gewone css die buiten alle media queries staat is mijn mobiele versie. daar zit geen
+vaste breedte in en alles staat onder elkaar. daarna gebruik ik min-width om er dingen bij
+te zetten voor grotere schermen: vanaf 768 en vanaf 1024 krijgt main een max width zodat de
+regels tekst niet superlang worden op een breed scherm. dat is de mobile first volgorde,
+klein beginnen en omhoog bouwen in plaats van andersom, en dat is ook wat mdn aanraadt.
+
+Voor mobiel zelf heb ik 1 max-width query. tot en met 480px zet ik het portret op float none
+zodat mijn tekst er niet meer in een smal kolommetje naast geduwd wordt, en worden de
+knoppen wat kleiner.
+
+Getest met f12 op 320, 375, 768 en 1280 breed. nergens horizontaal scrollen en de tekst
+blijft overal leesbaar.
+
+Waarom: scenario 2 leest mijn blog op een telefoon, die mag niet hoeven zoomen of
+horizontaal scrollen.
+
+Bron: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries
+
+## Keuze 4, custom fonts
+
+De h1 is press start 2p en de h2 is MonsterFriend, allebei pixel fonts. undertale was
+vroeger als kind mijn favoriete game, daarom heb ik de achtergrond en juist dit stel fonts
+gekozen. het zijn custom fonts, dus geen standaard font van de browser maar bestanden die ik
+zelf heb gedownload en in mijn assets map heb gezet. met font-face geef ik ze in de css een
+naam en het pad naar dat bestand, en daarna gebruik ik die naam gewoon in font-family. zo
+ziet het er op elke computer hetzelfde uit, ook als iemand dat font niet geinstalleerd heeft.
+
+Maar in zo'n pixel font een hele alinea lezen is niet fijn, dus alle p tekst staat in het
+sans font.
 
 Waarom: het moet er wel uitzien als mij, het is een portfolio en geen bedrijfssite. maar de
 recruiter uit scenario 1 moet mijn tekst ook echt kunnen lezen.
 
 Bron: https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face
 
-## Keuze 4, donker met lichte tekst en rode koppen
+## Keuze 5, donker met lichte tekst en rode koppen
 
 De video achtergrond is donker dus de tekst is aliceblue of wit. de h2 is rood, dat valt op
 tegen zwart en hakt de pagina in stukjes zodat je snel kan scannen waar iets over gaat. dat
 is precies wat je wil als je snel door de blog scrollt.
 
-## Keuze 5, externe css en een assets map
+## Keuze 6, externe css en een professionele mappenstructuur
 
 De css staat in 1 apart bestand en niet in de html. ik pas het op 1 plek aan en het
-verandert op alle 4 de paginas. in assets staan css, fonts, img en video apart, zodat ik er
-zo een nieuwe pagina of blogpost bij kan zetten zonder dat ik iets moet verplaatsen.
+verandert meteen op alle 4 de paginas.
 
-## Eerlijk over mobile first
+Verder heb ik bewust voor een professionele mappenstructuur gekozen en niet alles los in 1
+map. in assets staan css, fonts, img en video netjes apart. dat had ik ooit gelezen en het
+wordt ook zo aangeraden. het is veel overzichtelijker, ik weet meteen waar ik moet zijn, en
+ik kan er zo een nieuwe pagina of blogpost bij zetten zonder dat ik iets hoef te verplaatsen.
 
-Ik heb de site op mijn laptop gebouwd en dus niet mobile first. mdn raadt mobile first aan
-en dat had ik beter kunnen doen, want dan begin je klein en bouw je omhoog in plaats van
-andersom.
+## Wat ik hierna nog ga doen
 
-Getest heb ik hem daarna wel, met f12 in de browser op 320, 375, 768 en 1280 breed.
-nergens horizontaal scrollen en de tekst blijft leesbaar. dat komt vooral door keuze 2,
-alles staat al onder elkaar en ik gebruik bijna nergens vaste breedtes in px.
-
-Wat nog niet af is: het portret is 190px breed en staat op float right. op 320px duwt hij de
-tekst ernaast in een smal kolommetje. de mail link in de footer is nu zwart op een donkere
-achtergrond en dat is te weinig contrast. dat zijn de 2 dingen die ik hierna ga fixen.
+Een echte foto in het portret zetten in plaats van tekst, met een alt tekst erbij. en mijn
+footer is nu leeg op alle paginas, daar wil ik nog iets in zetten.

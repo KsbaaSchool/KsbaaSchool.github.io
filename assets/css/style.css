@@ -20,7 +20,6 @@
 ul{
 
 list-style: none;
-text-decoration: none;
 
 }
 
@@ -105,17 +104,20 @@ margin: auto;
 }
 
 
-.linkjes li {
+.contactli {
 
-margin: 10px 0;
+/* hier is jouw plek. deze li ziet er nu precies uit als die in de header.
+   probeer maar: color: red;   of   margin: 10px 0;  om hem naar links te zetten */
 
 }
 
 a{
 
+     text-decoration: none;
+
      position: relative;
 z-index: 1;
-     color:inherit
+     color:inherit;
 }
 
 
@@ -168,4 +170,46 @@ color: white;
 
 
 box-shadow: 10px 5px 50px rgb(255, 0, 0);
+}
+
+
+
+@media (max-width: 480px) {
+
+#potret {
+
+float: none;
+margin: 20px auto;
+
+}
+
+li {
+
+font-size: 20px;
+
+}
+
+}
+
+
+@media (min-width: 768px) {
+
+main {
+
+max-width: 700px;
+margin: auto;
+
+}
+
+}
+
+
+@media (min-width: 1024px) {
+
+main {
+
+max-width: 900px;
+
+}
+
 }
