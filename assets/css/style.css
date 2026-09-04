@@ -92,18 +92,50 @@ width: fit-content;
 padding: 10px;
 font-size: 30px;
      font-family: 'sans';
-
+color: white;
 margin: auto;
-}
 
-a:hover{
-
-text-shadow: 5px 0px 10px white;
-
+     position: relative;
 
 }
 
-a:active{
+a{
+
+     color:inherit
+}
+
+
+
+
+#box:hover{
+
+animation: expand;
+animation-duration: 1s;
+
+}
+
+#box{
+
+     transform: translate(35px, -25px);
+
+width: 50px;
+height: 25px;
+background: blue;
+position: absolute;
+z-index: -1;
+
+
+
+}
+
+@keyframes expand {
+
+     from{transform: scale(1)}
+     to{transform:scale(3)}
+     
+}
+
+a:active{ 
 color:yellow
 
 }
