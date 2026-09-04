@@ -94,6 +94,10 @@ font-size: 30px;
      font-family: 'sans';
 
 margin: auto;
+}
 
+a:hover{
+
+color:brown;
 
 }
