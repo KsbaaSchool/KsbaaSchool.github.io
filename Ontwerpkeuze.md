@@ -5,7 +5,7 @@ opgezocht op youtube en in de docs van mdn.
 
 In de opdracht staat dat je minimaal 2 gebruikersscenario's en minimaal 3 ontwerpkeuzes moet
 onderbouwen, met minimaal 1 bron. ik ga niet voor die minimale eis. ik heb 6 keuzes
-uitgewerkt met 4 bronnen erbij, want ik wil hier boven voldoende op staan en niet precies op
+uitgewerkt met 6 bronnen erbij, want ik wil hier boven voldoende op staan en niet precies op
 de streep.
 
 ## Voor wie ik het maak
@@ -22,13 +22,13 @@ steeds in en uit klikken en niet inzoomen om de tekst te kunnen lezen.
 ## Keuze 1, overal hetzelfde menu op dezelfde plek
 
 Elke pagina heeft precies dezelfde header met dezelfde 4 knoppen in dezelfde volgorde.
-projecten staat als 2e zodat de recruiter er meteen bij is. de pagina waar je nu staat
-krijgt aria-current="page", zodat je het ziet en een screenreader het ook voorleest.
+projecten staat als 2e zodat de recruiter er meteen bij is. het menu zit in een nav element
+met daarin een ul met li's, want een menu is eigenlijk gewoon een lijstje met links.
 
 Waarom: allebei de scenarios hebben dit nodig. de recruiter wil in 1 klik naar projecten en
 degene die de blog leest wil daarna makkelijk terug.
 
-Bron: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-current
+Bron: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav
 
 ## Keuze 2, alles in 1 kolom onder elkaar
 
@@ -40,25 +40,15 @@ Waarom: scenario 2. blog lezen op de telefoon zonder horizontaal scrollen.
 
 Bron: https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design
 
-## Keuze 3, mobile first met media queries
+## Keuze 3, hover animatie op de knoppen
 
-De gewone css die buiten alle media queries staat is mijn mobiele versie. daar zit geen
-vaste breedte in en alles staat onder elkaar. daarna gebruik ik min-width om er dingen bij
-te zetten voor grotere schermen: vanaf 768 en vanaf 1024 krijgt main een max width zodat de
-regels tekst niet superlang worden op een breed scherm. dat is de mobile first volgorde,
-klein beginnen en omhoog bouwen in plaats van andersom, en dat is ook wat mdn aanraadt.
+Ga je met je muis over een knop, dan flitst er een rood blokje achter de tekst. dat blokje is
+een lege div naast de link, die pak ik met a:hover + .box. de beweging zelf zit in een
+keyframes met scale en opacity.
 
-Voor mobiel zelf heb ik 1 max-width query. tot en met 480px zet ik het portret op float none
-zodat mijn tekst er niet meer in een smal kolommetje naast geduwd wordt, en worden de
-knoppen wat kleiner.
+        Waarom: het lijkt professioneel, een recruiter zou je eerder aannemen voor zulke details. en het past bij de game stijl.
 
-Getest met f12 op 320, 375, 768 en 1280 breed. nergens horizontaal scrollen en de tekst
-blijft overal leesbaar.
-
-Waarom: scenario 2 leest mijn blog op een telefoon, die mag niet hoeven zoomen of
-horizontaal scrollen.
-
-Bron: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries
+Bron: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations/Using_CSS_animations
 
 ## Keuze 4, custom fonts
 
@@ -79,9 +69,13 @@ Bron: https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face
 
 ## Keuze 5, donker met lichte tekst en rode koppen
 
-De video achtergrond is donker dus de tekst is aliceblue of wit. de h2 is rood, dat valt op
-tegen zwart en hakt de pagina in stukjes zodat je snel kan scannen waar iets over gaat. dat
-is precies wat je wil als je snel door de blog scrollt.
+De video achtergrond is donker dus mijn tekst is aliceblue of wit. de h2 is rood, dat valt op
+en hakt de pagina in stukjes zodat je snel kan scannen waar iets over gaat.
+
+Ik heb mijn kleuren door de contrast checker van webaim gehaald en ze halen allemaal de AA
+grens van 4.5. rood op zwart komt op 5.2 en mijn gewone tekst op 19.
+
+Bron: https://webaim.org/resources/contrastchecker/
 
 ## Keuze 6, externe css en een professionele mappenstructuur
 
@@ -93,7 +87,28 @@ map. in assets staan css, fonts, img en video netjes apart. dat had ik ooit gele
 wordt ook zo aangeraden. het is veel overzichtelijker, ik weet meteen waar ik moet zijn, en
 ik kan er zo een nieuwe pagina of blogpost bij zetten zonder dat ik iets hoef te verplaatsen.
 
+## Eerlijk over mobile first
+
+Ik heb de site op mijn laptop gebouwd en dus niet mobile first. mdn raadt mobile first aan
+en dat had ik beter kunnen doen, want dan begin je klein en bouw je omhoog in plaats van
+andersom.
+
+Getest heb ik hem daarna wel, met f12 op 320, 375, 768 en 1280 breed. nergens horizontaal
+scrollen en overal leesbaar. daarna heb ik er 3 media queries in gezet voor mobiel, tablet
+en desktop.
+
+Bron: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries
+
+## Wat niet helemaal semantisch is
+
+In criterium 1 staat dat je correcte semantische elementen moet gebruiken. dat klopt voor
+het grootste deel, ik heb header, nav, main, section, article en footer. maar 3 dingen niet:
+
+- de lege divs met class box zijn er puur voor de animatie, die betekenen inhoudelijk niks
+
+Eerlijk gezegd: ik was met die hover animatie bezig, ik zat in de flow en vond het gewoon
+leuk om te bouwen, dus ben ik doorgegaan in plaats van dit netjes te maken. 
+
 ## Wat ik hierna nog ga doen
 
-Een echte foto in het portret zetten in plaats van tekst, met een alt tekst erbij. en mijn
-footer is nu leeg op alle paginas, daar wil ik nog iets in zetten.
+Een echte foto in het portret zetten met een alt tekst erbij, en iets in mijn footers zetten.
