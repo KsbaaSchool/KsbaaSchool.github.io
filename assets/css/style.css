@@ -18,29 +18,65 @@
 }
 
 
+
+
+
 h1 {
 
-     
+     color:aliceblue;
  font-family: "press start 2p";
-border-style: inset;
-width: fit-content;
-padding: 8px;
-border-color: black;
+     padding: 8px;
+     border-style: inset;
+
+     width: fit-content;
+
+border-color:  black;
 border-radius: 20px;
-background-color: red;
 
 }
+
+
+.achtergrond-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1; 
+}
+
+
+body {
+
+
+
+
+background-image: url(../img/SansBackground.jpg);
+background-attachment: fixed;
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover; 
+ background: linear-gradient(black ,Blue);
+
+ */
+}
+
 
 p{
 
 font-family: "sans";
 
+color: aliceblue;
+
+
 }
 
 
 h2 {
+     padding: 5px;
 font-family: "MonsterFriendFont";
-
+color: red;
 }
 
 
